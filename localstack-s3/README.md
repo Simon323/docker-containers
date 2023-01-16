@@ -39,3 +39,8 @@ $ aws --endpoint-url=http://localhost:4566 s3 ls s3://yourbucket --recursive --s
 ```bash
 $ aws --endpoint-url=http://localhost:4566 s3api list-buckets --profile your_profile
 ```
+
+## Sync files
+```bash
+$ aws --endpoint-url=http://localhost:4566 s3 sync local_folder s3://yourbucket --profile your_profile
+```
