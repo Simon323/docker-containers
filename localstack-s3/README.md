@@ -6,7 +6,7 @@
 [your_profile]
 aws_access_key_id = foobar
 aws_secret_access_key = foobar
-region = eu-west-1
+region = us-east-1
 ```
 
 
