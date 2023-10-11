@@ -1,0 +1,12 @@
+version: '3'
+services:
+  chii:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /app
+    environment:
+      - CHII_DOMAIN=example.domain.app
+    command: ["npx", "chii", "start", "-p", "2444", "-d", "${CHII_DOMAIN}"]
+    ports:
+      - '2444:2444'
