@@ -14,11 +14,13 @@
 ## Backup restore
   - docker exec -it pg_container bash
   - psql -U root your_project_db < /tmp/your_project_db_stage_yyyy_MM_dd.backup
+  - psql -h host.docker.internal -p 5434 -U root your_project_db < /tmp/your_project_db_stage_yyyy_MM_dd.backup
 
 ## Get backup
   - docker exec -it pg_container bash
   - pg_dump -U root your_project_db > /tmp/your_project_db_`date +%d-%m-%Y"_"%H_%M_%S`.backup
   - pg_dumpall -c -U root > /tmp/your_project_db_`date +%d-%m-%Y"_"%H_%M_%S`.sql
+  - pg_dump -h host.docker.internal -p 5434 -U root -O --disable-dollar-quoting -x -c -b -v your_project_db > /tmp/your_project_db_`date +%d-%m-%Y"_"%H_%M_%S`.backup
 
 ## Connection between pg & admin:
   - run cmd
