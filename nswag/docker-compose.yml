@@ -1,0 +1,10 @@
+version: '3'
+services:
+  my-node-container:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      - ./src:/app/src
+    ports:
+      - "5740:8080"
